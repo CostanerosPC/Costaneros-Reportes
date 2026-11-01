@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Centro de Reportes · Costaneros de Puerto Cabello</title>
+<style>
+:root{--bg:#f3f5fa;--sf:#fff;--ink:#0d1b3d;--mu:#5b6a8c;--ln:#dfe5f1;--nv:#0b2a6f;--or:#f26b0f;--ok:#14804a;--wn:#c2410c;--hd:#0b2a6f;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1226;--sf:#121c38;--ink:#eaf0ff;--mu:#9fb0d6;--ln:#22305a;--nv:#6d94ff;--ok:#38c07d;--wn:#ff9a5c;--hd:#0f1d44;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0a1226;--sf:#121c38;--ink:#eaf0ff;--mu:#9fb0d6;--ln:#22305a;--nv:#6d94ff;--ok:#38c07d;--wn:#ff9a5c;--hd:#0f1d44;color-scheme:dark}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:0 16px 40px}
+header{background:var(--hd);color:#fff;border-bottom:4px solid var(--or);margin:0 -16px 18px;padding:22px 16px 20px}
+.hi{max-width:980px;margin:0 auto;display:flex;gap:14px;align-items:center}
+.hi svg{width:46px;height:46px;flex:none}
+h1{font-size:21px;margin:0;letter-spacing:.2px}
+.sub{font-size:13px;opacity:.85;margin-top:2px}
+.tag{margin-left:auto;font-size:11px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;border:1px solid rgba(255,255,255,.4);border-radius:99px;padding:4px 10px;white-space:nowrap}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:14px}
+.k,.card,.ch{background:var(--sf);border:1px solid var(--ln);border-radius:14px}
+.k{padding:12px 14px}.k b{display:block;font-size:22px;color:var(--nv)}.k span{font-size:12px;color:var(--mu)}
+.ch{padding:14px 14px 8px;margin-bottom:16px}.ch h2{font-size:13px;margin:0 0 6px;color:var(--mu);text-transform:uppercase;letter-spacing:.6px}
+.ch svg{width:100%;height:auto;display:block}
+.bar{fill:var(--nv)}.bar.last{fill:var(--or)}.lbl{fill:var(--mu);font-size:11px;text-anchor:middle}.val{fill:var(--ink);font-size:11px;font-weight:600;text-anchor:middle}
+.bar_{fill:var(--ln)}
+.tb{display:flex;gap:10px;margin-bottom:14px}
+input,button,select{font:inherit}
+#q{flex:1;min-width:0;padding:11px 14px;border:1px solid var(--ln);border-radius:12px;background:var(--sf);color:var(--ink)}
+.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:600;cursor:pointer;background:var(--or);color:#fff;white-space:nowrap}
+.btn.g{background:transparent;color:var(--nv);border:1px solid var(--ln)}.btn.d{background:#b42318}
+.btn[disabled]{opacity:.45;cursor:default}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:14px}
+.card{padding:16px;display:flex;flex-direction:column;gap:12px}
+.top{display:flex;align-items:center;gap:12px}
+.s{background:var(--nv);color:#fff;font-weight:700;border-radius:10px;padding:8px 10px;font-size:16px;min-width:52px;text-align:center}
+:root[data-theme="dark"] .s{color:#0a1226}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .s{color:#0a1226}}
+.top b{display:block}.top small{color:var(--mu)}
+.mini{width:100%;height:48px}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.st div{background:var(--bg);border-radius:10px;padding:7px 4px}.st b{display:block;font-size:15px}.st span{font-size:11px;color:var(--mu)}
+.chip{font-size:12px;font-weight:600;border-radius:99px;padding:3px 10px;align-self:flex-start;border:1px solid currentColor}
+.chip.ok{color:var(--ok)}.chip.wn{color:var(--wn)}
+.nt{font-size:13px;color:var(--mu);min-height:19px}
+.ac{display:flex;gap:8px}.ac .btn{flex:1;text-align:center;text-decoration:none;font-size:14px;padding:9px 10px}
+.em{text-align:center;color:var(--mu);padding:36px 10px;border:1px dashed var(--ln);border-radius:14px}
+footer{margin-top:22px;font-size:12px;color:var(--mu);text-align:center}
+dialog{border:1px solid var(--ln);border-radius:16px;background:var(--sf);color:var(--ink);width:min(440px,92vw);padding:18px}
+dialog::backdrop{background:rgba(5,10,30,.55)}
+dialog h3{margin:0 0 10px}label{display:block;font-size:12px;color:var(--mu);margin:10px 0 4px}
+dialog input{width:100%;padding:10px 12px;border:1px solid var(--ln);border-radius:10px;background:var(--bg);color:var(--ink)}
+.er{color:var(--wn);font-size:13px;min-height:18px;margin-top:8px}.row{display:flex;gap:8px;margin-top:10px}.row .btn{flex:1}
+.tools{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:22px}.tools .btn{font-size:13px;padding:8px 12px}
+</style></head><body><div class="wrap">
+<header><div class="hi">
+<svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22" fill="#f26b0f"/><g fill="none" stroke="#0b2a6f" stroke-width="2.2"><path d="M2 24h44M24 2v44"/><path d="M8 8c10 8 10 24 0 32M40 8c-10 8-10 24 0 32"/></g></svg>
+<div><h1>Centro de Reportes</h1><div class="sub">Costaneros de Puerto Cabello · Rendimiento Físico · Temporada 2026</div></div>
+<div class="tag">Uso interno</div></div></header>
+<div class="kpis" id="kp"></div>
+<div class="ch"><h2>Carga semanal total (UA)</h2><div id="chart"></div></div>
+<div class="tb"><input id="q" type="search" placeholder="Buscar semana, fecha o nota…"><button class="btn" id="add" hidden>＋ Nueva semana</button></div>
+<div class="grid" id="gr"></div>
+<div class="tools"><button class="btn g" id="b1">Descargar versión para publicar</button><button class="btn g" id="b2">Copia de seguridad</button><button class="btn g" id="b3">Importar copia</button><input type="file" id="fx" accept=".json" hidden></div>
+<footer>Los PDF se guardan en OneDrive; aquí solo van los enlaces y las cifras de equipo.<br>Monotonía y strain según Foster (monotonía ≥ 2,0 = alerta).</footer>
+</div>
+<dialog id="dlg"><h3 id="dt">Nueva semana</h3>
+<label>Semana (número)</label><input id="fn" type="number" min="1" max="60">
+<label>Lunes de inicio</label><input id="fi" type="date">
+<label>Cargas diarias Lun–Dom (UA), separadas por coma</label><input id="fd" placeholder="1800, 1020, 0, 1800, 360, 960, 960">
+<label>Minutos totales de la semana</label><input id="fm" type="number" min="0">
+<label>Enlace al PDF (OneDrive)</label><input id="fp" type="url" placeholder="https://…">
+<label>Nota</label><input id="ft" placeholder="Ej.: Pretemporada · inicio de temporada">
+<div class="er" id="er"></div>
+<div class="row"><button class="btn g" id="cx">Cancelar</button><button class="btn d" id="dl" hidden>Eliminar</button><button class="btn" id="sv">Guardar</button></div></dialog>
+<script>
+const $=s=>document.querySelector(s);
+const SEED=/*DATA*/[{"n":1,"inicio":"2026-09-21","diaria":[1800,1020,0,1800,360,960,960],"minutos":1005,"pdf":"","nota":"Pretemporada · inicio de temporada"}]/*END*/;
+const KEY='costaneros-reportes-v1';
+let rows=SEED,canEdit=true,col=true,edit=null;
+try{const z=localStorage.getItem(KEY);if(z)rows=JSON.parse(z)}catch(e){}
+const persist=()=>{try{localStorage.setItem(KEY,JSON.stringify(rows))}catch(e){}};
+const el=(t,c,x)=>{const e=document.createElement(t);if(c)e.className=c;if(x!=null)e.textContent=x;return e};
+const nf=(n,d=0)=>n.toLocaleString('es-VE',{maximumFractionDigits:d,minimumFractionDigits:d});
+const D=s=>{const[a,b,c]=s.split('-').map(Number);return new Date(a,b-1,c)};
+const sid=n=>'S'+String(n).padStart(2,'0');
+function range(r){const a=D(r.inicio),b=new Date(a);b.setDate(b.getDate()+6);const f=new Intl.DateTimeFormat('es-VE',{day:'numeric',month:'short'});return f.format(a)+' – '+f.format(b)+' '+b.getFullYear()}
+function calc(r){const d=r.diaria,t=d.reduce((a,b)=>a+b,0),m=t/d.length;const sd=Math.sqrt(d.reduce((a,b)=>a+(b-m)**2,0)/(d.length-1));const mono=sd?m/sd:0;return{t,mono,strain:t*mono,pico:Math.max(...d),rpe:r.minutos?t/r.minutos:0}}
+function bars(vals,w,h,labels,last){const n=vals.length,mx=Math.max(1,...vals),bw=Math.min(54,w/n*.62);let s='';vals.forEach((v,i)=>{const x=(i+.5)*w/n,bh=(h-34)*v/mx;s+=`<rect class="bar${last&&i==n-1?' last':''}" x="${x-bw/2}" y="${h-18-bh}" width="${bw}" height="${bh}" rx="4"/>`;if(labels)s+=`<text class="lbl" x="${x}" y="${h-4}">${labels[i]}</text><text class="val" x="${x}" y="${h-22-bh}">${nf(v)}</text>`});return s}
+function render(){
+ const all=rows.filter(r=>r&&r.n&&r.inicio&&Array.isArray(r.diaria)&&r.diaria.length>1).sort((a,b)=>a.n-b.n);
+ $('#add').hidden=!canEdit;
+ const kp=$('#kp');kp.replaceChildren();
+ if(all.length){const r=all[all.length-1],c=calc(r);
+  [[sid(r.n)+' · Carga (UA)',nf(c.t)],['Volumen (min)',nf(r.minutos||0)],['Monotonía',nf(c.mono,2)],['Strain (UA)',nf(c.strain)]].forEach(([l,v])=>{const k=el('div','k');k.append(el('b',0,v),el('span',0,l));kp.append(k)});
+  $('#chart').innerHTML=`<svg viewBox="0 0 640 190" role="img" aria-label="Carga semanal">${bars(all.map(r=>calc(r).t),640,190,all.map(r=>sid(r.n)),true)}</svg>`}
+ else $('#chart').textContent='Sin datos todavía.';
+ const q=$('#q').value.trim().toLowerCase(),g=$('#gr');g.replaceChildren();
+ const list=all.slice().reverse().filter(r=>(sid(r.n)+' '+range(r)+' '+(r.nota||'')).toLowerCase().includes(q));
+ if(!list.length){const e=el('div','em',all.length?'No hay semanas que coincidan.':(col?'Aún no hay semanas registradas. Toca “Nueva semana” para agregar la primera.':'Abre esta página con tu sesión de Claude para ver los datos.'));g.append(e)}
+ list.forEach(r=>{const c=calc(r),card=el('div','card'),top=el('div','top');
+  const t=el('div');t.append(el('b',0,'Semana '+r.n),el('small',0,range(r)));top.append(el('div','s',sid(r.n)),t);
+  const m=el('div');m.innerHTML=`<svg class="mini" viewBox="0 0 140 48" preserveAspectRatio="none">${bars(r.diaria,140,48,null,false)}</svg>`;
+  const st=el('div','st');[['Carga',nf(c.t)],['Minutos',nf(r.minutos||0)],['RPE medio',c.rpe?nf(c.rpe,2):'—'],['Pico',nf(c.pico)],['Monotonía',nf(c.mono,2)],['Strain',nf(c.strain)]].forEach(([l,v])=>{const d=el('div');d.append(el('b',0,v),el('span',0,l));st.append(d)});
+  const ok=c.mono<2,chip=el('div','chip '+(ok?'ok':'wn'),ok?'Monotonía en rango':'Monotonía alta · revisar');
+  const ac=el('div','ac');
+  if(/^https:\/\//i.test(r.pdf||'')){const a=el('a','btn','Abrir PDF');a.href=r.pdf;a.target='_blank';a.rel='noopener';ac.append(a)}else{const b=el('button','btn','Sin enlace al PDF');b.disabled=true;ac.append(b)}
+  if(canEdit){const b=el('button','btn g','Editar');b.onclick=()=>open(r);ac.append(b)}
+  card.append(top,m,st,chip,el('div','nt',r.nota||''),ac);g.append(card)})}
+function open(r){edit=r||null;$('#dt').textContent=r?'Editar '+sid(r.n):'Nueva semana';
+ $('#fn').value=r?r.n:(rows.reduce((a,b)=>Math.max(a,b.n||0),0)+1);$('#fn').disabled=!!r;
+ $('#fi').value=r?r.inicio:'';$('#fd').value=r?r.diaria.join(', '):'';$('#fm').value=r?r.minutos||'':'';$('#fp').value=r?r.pdf||'':'';$('#ft').value=r?r.nota||'':'';
+ $('#er').textContent='';$('#dl').hidden=!r;$('#dl').textContent='Eliminar';$('#dlg').showModal()}
+$('#add').onclick=()=>open(null);$('#cx').onclick=()=>$('#dlg').close();$('#q').oninput=render;
+$('#sv').onclick=async()=>{
+ const n=parseInt($('#fn').value),inicio=$('#fi').value,d=$('#fd').value.split(/[,;\s]+/).filter(Boolean).map(Number),pdf=$('#fp').value.trim();
+ if(!n||n<1)return $('#er').textContent='Indica el número de semana.';
+ if(!inicio)return $('#er').textContent='Indica el lunes de inicio.';
+ if(d.length!==7||d.some(x=>isNaN(x)||x<0))return $('#er').textContent='Escribe 7 cargas diarias (Lun–Dom) separadas por coma.';
+ if(pdf&&!/^https:\/\//i.test(pdf))return $('#er').textContent='El enlace debe empezar con https://';
+ rows=rows.filter(x=>x.n!==n).concat([{n,inicio,diaria:d,minutos:parseInt($('#fm').value)||0,pdf,nota:$('#ft').value.trim()}]);persist();render();$('#dlg').close()};
+$('#dl').onclick=async()=>{if($('#dl').textContent==='Eliminar'){$('#dl').textContent='Toca otra vez';return}
+ rows=rows.filter(x=>x.n!==edit.n);persist();render();$('#dlg').close()};
+const dl=(name,txt,type)=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([txt],{type}));a.download=name;document.body.append(a);a.click();a.remove()};
+$('#b1').onclick=()=>{const m='/*'+'DATA*/',e='/*END'+'*/',h='<!doctype html>\n'+document.documentElement.outerHTML,i=h.indexOf(m),j=h.indexOf(e,i);dl('index.html',h.slice(0,i)+m+JSON.stringify(rows)+h.slice(j),'text/html')};
+$('#b2').onclick=()=>dl('reportes-costaneros.json',JSON.stringify(rows,null,1),'application/json');
+$('#b3').onclick=()=>$('#fx').click();
+$('#fx').onchange=async e=>{try{const r=JSON.parse(await e.target.files[0].text());if(Array.isArray(r)){rows=r;persist();render()}}catch(x){}e.target.value=''};
+render();
+</script></body></html>
